@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IA & Données Étudiantes : Notre Engagement de Conformité — Le Guide Complet pour DSI & DPO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- EDUSIGN BRAND PALETTE --- */
+      :root {
+        --edusign-blue-green: #1c414d;
+        --edusign-yellow: #ffd78b;
+        --edusign-green: #b1e1b9;
+        --text-primary: #1c414d;
+        --text-secondary: #5a7077;
+        --background-light: #f7f9fa;
+        --background-white: #ffffff;
+        --border-light: #eef1f2;
+      }
+
+      /* --- ANIMATIONS --- */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-on-load {
+        animation: fadeInUp 0.7s ease-out forwards;
+      }
+
+      body {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 0; /* No padding on body to allow full-width header/footer */
+        font-family: 'Inter', sans-serif;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        background-color: var(--background-white);
+      }
+
+      /* --- HEADER / BANNIÈRE --- */
+      .header {
+        background-color: var(--edusign-blue-green);
+        color: var(--background-white);
+        text-align: center;
+        padding: 64px 24px;
+        margin-bottom: 56px;
+      }
+      .header h1 {
+        color: var(--background-white);
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 8px;
+        animation: fadeInUp 0.5s ease-out forwards;
+      }
+      .header .subtitle {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1.25rem;
+        font-weight: 500;
+        opacity: 0;
+        animation: fadeInUp 0.5s 0.2s ease-out forwards;
+      }
+
+      /* --- Conteneur principal pour le padding --- */
+      .content-wrapper {
+        padding: 0 24px;
+      }
+
+      /* --- TYPOGRAPHIE & STRUCTURE --- */
+       h2 {
+        color: var(--text-primary);
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-top: 48px;
+        margin-bottom: 24px;
+        position: relative;
+        padding-bottom: 12px;
+      }
+      h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background-color: var(--edusign-yellow);
+        border-radius: 2px;
+      }
+
+      h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 24px;
+        margin-bottom: 16px;
+      }
+
+      p {
+        margin-bottom: 16px;
+        text-align: justify;
+      }
+
+      strong {
+        color: var(--text-primary);
+        font-weight: 600;
+      }
+
+      /* --- SECTIONS SPÉCIFIQUES --- */
+      .intro-section {
+        background-color: var(--background-light);
+        padding: 32px;
+        border-radius: 12px;
+        margin-bottom: 40px;
+        opacity: 0;
+      }
+      .intro-section h2 {
+        margin-top: 0;
+      }
+      main {
+        opacity: 0;
+        animation-delay: 0.4s;
+      }
+
+      .guarantee-section {
+        margin-bottom: 32px;
+      }
+      .guarantee-section h2, .guarantee-section h3 {
+          margin-top: 0;
+      }
+      .guarantee-section ul {
+        list-style: none;
+        padding: 0;
+      }
+      .guarantee-section li {
+        padding-left: 32px;
+        position: relative;
+        margin-bottom: 12px;
+      }
+      .guarantee-section li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        top: -2px;
+        color: var(--edusign-green);
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      /* --- BOÎTE À OUTILS (Checklist) --- */
+      .checklist-box {
+        background-color: var(--background-light);
+        padding: 40px;
+        border-radius: 12px;
+        margin: 56px 0;
+        border: 1px solid var(--border-light);
+        opacity: 0;
+        animation-delay: 0.6s;
+      }
+      .checklist-box h2, .checklist-box h3 {
+        text-align: center;
+        margin-top: 0;
+      }
+      .checklist-box h2::after {
+          left: 50%;
+          transform: translateX(-50%);
+      }
+      .checklist-box ol {
+        list-style: none;
+        padding: 0;
+        margin-top: 32px;
+      }
+      .checklist-box li {
+        background: var(--background-white);
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
+        border: 1px solid var(--border-light);
+        box-shadow: 0 2px 8px rgba(28, 65, 77, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .checklist-box li:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(28, 65, 77, 0.08);
+      }
+       .checklist-box li strong {
+         display: block;
+         margin-bottom: 8px;
+       }
+
+
+      /* --- FAQ --- */
+      .faq-section {
+        margin: 56px 0;
+        opacity: 0;
+        animation-delay: 0.8s;
+      }
+      .faq-section h2 {
+        text-align: center;
+      }
+      .faq-section h2::after {
+          left: 50%;
+          transform: translateX(-50%);
+      }
+      .faq-item {
+        margin-bottom: 16px;
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        padding: 24px;
+        background: var(--background-white);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .faq-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(28, 65, 77, 0.08);
+      }
+      .faq-question {
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 12px;
+        font-size: 1.1rem;
+      }
+
+      /* --- CONCLUSION & SIGNATURE (FOOTER) --- */
+      .conclusion-section {
+        background-color: var(--edusign-blue-green);
+        color: var(--background-white);
+        padding: 64px 24px;
+        margin-top: 56px;
+        text-align: center;
+        opacity: 0;
+        animation-delay: 1s;
+      }
+      .conclusion-section h2 {
+          color: var(--background-white);
+          text-align: center;
+      }
+      .conclusion-section h2::after {
+        background-color: var(--edusign-yellow);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .conclusion-section p {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 32px;
+        text-align: center;
+      }
+      .signature {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--background-white);
+        margin-top: 24px;
+      }
+
+      /* --- MEDIA QUERIES POUR RESPONSIVE --- */
+      @media (max-width: 768px) {
+        .header {
+          padding: 48px 16px;
+        }
+        .header h1 {
+          font-size: 2rem;
+        }
+        .header .subtitle {
+          font-size: 1.1rem;
+        }
+        .content-wrapper {
+          padding: 0 16px;
+        }
+        h2 {
+          font-size: 1.5rem;
+        }
+        .checklist-box, .conclusion-section {
+          padding: 32px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>IA & Données Étudiantes : Notre Engagement de Conformité</h1>
+      <p class="subtitle">Le Guide Complet pour DSI & DPO</p>
+    </header>
+
+    <div class="content-wrapper">
+      <section class="intro-section animate-on-load" style="animation-delay: 0.2s;">
+        <h2>Introduction : Une IA au service de l'éducation, pas à son détriment</h2>
+        <p>
+          Chez Edusign, nous croyons que l'intelligence artificielle ne doit jamais remplacer le jugement humain, mais
+          l'assister avec rigueur, transparence et éthique. Dans un contexte éducatif, la confiance est une condition
+          absolue : confiance dans la technologie, dans la gestion des données, et dans le respect des valeurs
+          académiques.
+        </p>
+        <p>
+          Ce document est à la fois un engagement officiel et un guide de conformité à destination des DSI, DPO et
+          responsables pédagogiques. Il a été conçu pour répondre à vos exigences techniques, réglementaires et éthiques,
+          tout en vous apportant des réponses claires et vérifiables sur l'usage de l'IA dans l'environnement Edusign.
+        </p>
+      </section>
+
+      <main class="animate-on-load" style="animation-delay: 0.4s;">
+          <section class="guarantee-section">
+            <h2>Garantie de Confidentialité</h2>
+            <h3>Comment nous assurons que vos données n'entraînent JAMAIS l'IA</h3>
+            <ul>
+              <li>
+                Aucune donnée de vos utilisateurs (étudiants, enseignants, personnel) n'est utilisée pour entraîner,
+                réentraîner ou affiner nos modèles ou ceux de nos partenaires.
+              </li>
+              <li>
+                Nos modèles sont préentraînés sur des jeux de données publics, génériques, non liés à l'éducation ni à vos
+                environnements spécifiques.
+              </li>
+              <li>
+                Aucun historique, aucune métadonnée issue de vos environnements ne transite vers nos partenaires pour
+                affinement. Cela est formalisé dans notre DPA.
+              </li>
+              <li>Vos données sont cloisonnées, non mutualisées, et restent votre propriété intellectuelle.</li>
+              <li>
+                Toutes les fonctionnalités IA sont activables indépendamment, avec des droits d'accès granulaires et une
+                gestion fine des consentements.
+              </li>
+            </ul>
+          </section>
+
+          <section class="guarantee-section">
+            <h2>Garantie de Souveraineté</h2>
+            <h3>Maîtriser les flux de données et la conformité RGPD</h3>
+            <ul>
+              <li>Hébergement 100 % européen par défaut, dans des datacenters certifiés ISO 27001 (AWS France, OVHcloud).</li>
+              <li>
+                Pour certaines fonctionnalités avancées (analyse automatique de documents, assistance à la lecture), nous
+                collaborons avec des partenaires IA situés hors UE (ex. : Anthropic).
+              </li>
+            </ul>
+            <p><strong>Ces flux sont désactivés par défaut, et strictement encadrés par :</strong></p>
+            <ul>
+              <li>Les Clauses Contractuelles Types (CCT) de la Commission européenne.</li>
+              <li>Des limitations techniques empêchant la réutilisation ou le stockage permanent.</li>
+              <li>
+                Vos données sont transmises de manière éphémère, sécurisée, chiffrée, et ne sont jamais stockées durablement
+                hors UE.
+              </li>
+              <li>Chaque établissement garde la main sur les activations, les logs et les niveaux d'exposition.</li>
+            </ul>
+          </section>
+
+          <section class="guarantee-section">
+            <h2>Garantie Éthique</h2>
+            <h3>La supervision humaine comme principe non négociable</h3>
+            <ul>
+              <li>
+                Aucune décision critique (notation, sanction, validation de présence) n'est prise automatiquement. L'humain
+                reste l'arbitre final.
+              </li>
+              <li>
+                Nos systèmes IA sont conçus selon les principes de l'explicabilité algorithmique (XAI) : chaque fonction peut
+                être justifiée et documentée.
+              </li>
+              <li>
+                Nos algorithmes sont testés régulièrement pour identifier et corriger les biais susceptibles de produire des
+                effets discriminatoires.
+              </li>
+              <li>
+                Tous les modules IA sont audités en interne, avec possibilité de mise à disposition des rapports sur demande
+                (dans le cadre d'un audit ou d'un marché public).
+              </li>
+            </ul>
+          </section>
+      </main>
+      
+      <section class="checklist-box animate-on-load" style="animation-delay: 0.6s;">
+        <h2>Boîte à Outils pour DSI & DPO</h2>
+        <h3>La checklist de conformité IA : 7 points de contrôle</h3>
+        <ol>
+          <li>
+            <strong>Les données sont-elles utilisées pour entraîner les modèles ?</strong> → Non. Vérifiez dans notre DPA
+            la clause "Tolérance Zéro Entraînement".
+          </li>
+          <li>
+            <strong>Les données sont-elles hébergées dans l'Union Européenne ?</strong> → Oui, sauf activation explicite
+            d'un module externe optionnel. Hébergement par défaut : AWS France ou OVH.
+          </li>
+          <li>
+            <strong>Les transferts hors UE sont-ils encadrés par des clauses juridiques valides ?</strong> → Oui. Tous les
+            transferts sont couverts par les Clauses Contractuelles Types (CCT) de la Commission européenne.
+          </li>
+          <li>
+            <strong>Les traitements IA sont-ils désactivés par défaut ?</strong> → Oui. Chaque fonctionnalité doit être
+            activée manuellement par l'établissement.
+          </li>
+          <li><strong>Une supervision humaine est-elle imposée ?</strong> → Oui, pour toutes décisions à fort impact.</li>
+          <li>
+            <strong>Des audits techniques et éthiques sont-ils disponibles ?</strong> → Oui, sur demande contractuelle.
+          </li>
+          <li>
+            <strong>La portabilité et la réversibilité des données sont-elles garanties ?</strong> → Oui. La sortie
+            complète des données est possible à tout moment.
+          </li>
+        </ol>
+      </section>
+
+      <section class="faq-section animate-on-load" style="animation-delay: 0.8s;">
+        <h2>FAQ Étendue – Vos préoccupations, nos réponses</h2>
+        <div class="faq-item">
+          <p class="faq-question">
+            Quels sont les risques juridiques concrets d'une IA mal encadrée dans l'éducation ?
+          </p>
+          <div class="faq-answer">
+            Le principal risque est la non-conformité au RGPD, notamment en cas d'entraînement implicite des modèles sur
+            des données personnelles sensibles. Cela expose l'établissement à des sanctions de la CNIL et à une perte de
+            confiance institutionnelle.
+          </div>
+        </div>
+        <div class="faq-item">
+          <p class="faq-question">Comment Edusign sécurise-t-il les échanges avec ses partenaires IA ?</p>
+          <div class="faq-answer">
+            Toutes les communications se font via des API sécurisées avec authentification forte, chiffrement TLS,
+            monitoring d'activité, et expiration rapide des clés d'accès. Aucun identifiant personnel n'est transmis en
+            clair.
+          </div>
+        </div>
+        <div class="faq-item">
+          <p class="faq-question">La rétention technique de 30 jours est-elle conforme au RGPD ?</p>
+          <div class="faq-answer">
+            Oui. Cette rétention temporaire permet uniquement le monitoring technique et la détection d'abus ou d'erreurs.
+            Elle est encadrée dans notre DPA et totalement distincte de tout usage algorithmique ou marketing.
+          </div>
+        </div>
+        <div class="faq-item">
+          <p class="faq-question">Puis-je consulter les localisations précises et les types de traitement ?</p>
+          <div class="faq-answer">
+            Oui. Tout est détaillé dans notre Data Processing Agreement, accessible ici : [Lien direct vers le DPA]
+          </div>
+        </div>
+        <div class="faq-item">
+          <p class="faq-question">
+            Edusign propose-t-il une documentation dédiée pour les marchés publics ou appels d'offre ?
+          </p>
+          <div class="faq-answer">
+            Oui. Un dossier complet (technique, juridique, cybersécurité, accessibilité) est disponible sur demande.
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="conclusion-section animate-on-load" style="animation-delay: 1s;">
+      <h2>Conclusion</h2>
+      <p>
+        Faire confiance à Edusign, c'est choisir un partenaire technologique qui place la conformité, l'éthique et la
+        transparence au même niveau que l'innovation. Ce guide est notre réponse directe aux exigences les plus élevées
+        des établissements d'enseignement et des institutions publiques.
+      </p>
+      <div class="signature">Elliot, CEO — Edusign</div>
+    </footer>
+  </body>
+</html>
