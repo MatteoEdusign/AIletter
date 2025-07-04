@@ -19,10 +19,10 @@
         --edusign-green: #b1e1b9;
         --text-primary: #1c414d;
         --text-secondary: #5a7077;
-        /* MISE EN CONFORMITÉ : Remplacement de la couleur de fond par la couleur officielle */
         --background-light: #EFE7DD;
         --background-white: #ffffff;
         --border-light: #eef1f2;
+        /* Couleur validée */
         --header-color: hsl(33, 36%, 90%);
       }
 
@@ -62,31 +62,6 @@
         margin-bottom: 56px;
       }
 
-      /* AJOUT : Style du logo texte */
-      .logo-text {
-        font-family: 'Poppins', sans-serif;
-        font-size: 3rem;
-        font-weight: 600;
-        color: var(--edusign-yellow);
-        margin-bottom: 40px;
-        animation: fadeInUp 0.5s ease-out forwards;
-      }
-
-      .logo-e {
-        position: relative;
-      }
-
-      .logo-e::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -6px;
-        width: 100%;
-        height: 5px;
-        background-color: var(--edusign-yellow);
-        border-radius: 3px;
-      }
-
       .header h1 {
         color: var(--header-color);
         font-size: 2.5rem;
@@ -98,7 +73,8 @@
         animation: fadeInUp 0.5s 0.2s ease-out forwards;
       }
       .header .subtitle {
-        color: rgba(255, 255, 255, 0.85);
+        /* REFACTOR : Couleur ajustée pour utiliser la nouvelle teinte validée tout en gardant la transparence */
+        color: hsla(33, 36%, 90%, 0.85);
         font-size: 1.25rem;
         font-weight: 500;
         opacity: 0;
@@ -116,7 +92,6 @@
       }
 
       /* --- TYPOGRAPHIE & STRUCTURE --- */
-       /* MISE EN CONFORMITÉ : Priorité à la police Bw Gradual pour les titres */
       h1, h2, h3 {
         font-family: 'Bw Gradual', 'Inter', sans-serif;
       }
@@ -152,7 +127,7 @@
       p {
         margin-bottom: 16px;
         text-align: justify;
-        font-family: 'Inter', sans-serif; /* Assure que le corps reste en Inter */
+        font-family: 'Inter', sans-serif;
       }
 
       strong {
@@ -173,7 +148,7 @@
       }
       main {
         opacity: 0;
-        animation-delay: 0.8s; /* Délai ajusté pour l'intro */
+        animation-delay: 0.8s;
       }
 
       .guarantee-section {
@@ -191,7 +166,6 @@
         padding-left: 8px;
       }
       
-
       /* --- BOÎTE À OUTILS (Checklist) --- */
       .checklist-box {
         background-color: var(--background-light);
@@ -232,7 +206,6 @@
          display: block;
          margin-bottom: 8px;
        }
-
 
       /* --- FAQ --- */
       .faq-section {
@@ -287,19 +260,12 @@
       }
       .conclusion-section p {
         font-size: 1.1rem;
-        color: rgba(255, 255, 255, 0.9);
+        /* REFACTOR : Couleur ajustée pour utiliser la nouvelle teinte validée tout en gardant la transparence */
+        color: hsla(33, 36%, 90%, 0.9);
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 32px;
-        text-align: center;
-      }
-      .signature {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--header-color);
-        margin-top: 24px;
-        line-height: 1.5;
         text-align: center;
       }
 
@@ -308,9 +274,6 @@
         .header {
           padding: 48px 16px;
           margin-bottom: 40px;
-        }
-        .logo-text {
-            font-size: 2.5rem;
         }
         .header h1 {
           font-size: 2rem;
@@ -332,29 +295,20 @@
         }
       }
 
-      /* Ajout du style pour le logo responsive */
+      /* Style pour le logo image */
       .logo-edusign {
         display: block;
         margin: 0 auto 40px;
         max-width: 240px;
         height: auto;
+        animation: fadeInUp 0.5s ease-out forwards;
       }
 
+      /* Styles pour la nouvelle signature */
       .signature-footer {
         margin-top: 32px;
         text-align: center;
-        font-size: 1rem;
-        color: var(--header-color);
-        font-weight: 500;
-        letter-spacing: 0.02em;
       }
-      @media (max-width: 768px) {
-        .signature-footer {
-          font-size: 0.95rem;
-          margin-top: 24px;
-        }
-      }
-
       .signature-img {
         display: block;
         margin: 0 auto;
@@ -362,7 +316,6 @@
         height: auto;
         opacity: 0.92;
       }
-
       .signature-footer-text {
         margin-top: 16px;
         text-align: center;
@@ -370,19 +323,6 @@
         color: var(--header-color);
         font-weight: 500;
         letter-spacing: 0.02em;
-      }
-      @media (max-width: 768px) {
-        .signature-footer-text {
-          font-size: 0.95rem;
-          margin-top: 12px;
-        }
-      }
-
-      .header, .header h1, .header .subtitle {
-        color: var(--header-color) !important;
-      }
-      .conclusion-section, .conclusion-section h2, .signature-footer, .signature-footer-text {
-        color: var(--header-color) !important;
       }
     </style>
   </head>
