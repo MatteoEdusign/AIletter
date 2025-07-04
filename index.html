@@ -329,10 +329,42 @@
             margin-top: 40px;
         }
       }
+
+      /* Ajout du style pour le logo responsive */
+      .logo-edusign {
+        display: block;
+        margin: 0 auto 40px;
+        max-width: 240px;
+        height: auto;
+      }
+
+      .signature-footer {
+        margin-top: 32px;
+        text-align: center;
+        font-size: 1rem;
+        color: rgba(255,255,255,0.85);
+        font-weight: 500;
+        letter-spacing: 0.02em;
+      }
+      @media (max-width: 768px) {
+        .signature-footer {
+          font-size: 0.95rem;
+          margin-top: 24px;
+        }
+      }
+
+      .signature-img {
+        display: block;
+        margin: 0 auto;
+        max-width: 220px;
+        height: auto;
+        opacity: 0.92;
+      }
     </style>
   </head>
   <body>
     <header class="header">
+      <img src="assets/logo.png" alt="Logo Edusign" class="logo-edusign" loading="lazy" />
       <h1>IA & Données Étudiantes : Notre Engagement de Conformité</h1>
       <p class="subtitle">Le Guide Complet pour DSI & DPO</p>
     </header>
@@ -501,7 +533,9 @@
         transparence au même niveau que l'innovation. Ce guide est notre réponse directe aux exigences les plus élevées
         des établissements d'enseignement et des institutions publiques.
       </p>
-      <div class="signature">Elliot, CEO — Edusign</div>
+      <div class="signature-footer">
+        <img src="assets/signature.png" alt="Signature Elliot, CEO Edusign" class="signature-img" loading="lazy" />
+      </div>
     </footer>
   </body>
 </html>
